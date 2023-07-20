@@ -1,0 +1,47 @@
+#include <stdio.h>
+void swap(int *a, int *b) {
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void selectionSort(int array[], int size) {
+  for (int step = 0; step < size - 1; step++) {
+    int min_idx = step;
+    for (int i = step + 1; i < size; i++) {
+      if (array[i] < array[min_idx])
+        min_idx = i;
+    }
+    swap(&array[min_idx], &array[step]);
+  }
+}
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; ++i) {
+    printf("%d  ", array[i]);
+  }
+  printf("\n");
+}
+int main() {
+  int data[] = {20, 12, 10, 15, 2};
+  int size = sizeof(data) / sizeof(data[0]);
+  selectionSort(data, size);
+  printf("Sorted array in Acsending Order:\n");
+  printArray(data, size);
+}
+
+* ALGORITHM FOR SELECTION SORT:
+
+Step 1: Set Min to location 0 in Step 1.
+
+Step 2: Look for the smallest element on the list.
+
+Step 3: Replace the value at location Min with a different value.
+
+Step 4: Increase Min to point to the next element
+
+Step 5: Continue until the list is sorted.
+
+* TIME COMPLEXITY FOR SELECTION SORT:
+Best Case: O(n2)
+Worst Case: O(n2)
+Average Case: O(n2)

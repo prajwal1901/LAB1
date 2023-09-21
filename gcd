@@ -1,0 +1,30 @@
+#include <stdio.h>
+int gcd(int a, int b)
+{
+	if (a == 0)
+		return b;
+	return gcd(b % a, a);
+}
+int main()
+{
+	int a = 60, b = 25;
+	printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
+	a = 35, b = 10;
+	printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
+	a = 31, b = 2;
+	printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
+	return 0;
+}
+
+* ALGORITHM FOR GCD OF 2 NUMBERS:
+Step 1:  Let  a, b  be the two numbers
+Step 2:  a mod b = R
+Step 3:  Let  a = b  and  b = R
+Step 4:  Repeat Steps 2 and 3 until  a mod b  is greater than 0
+Step 5:  GCD = b
+Step 6: Finish
+
+* TIME COMPLEXITY FOR GCD OF 2 NUMBERS:
+Worst Case: O(log(min(A,B))
+Average Case: O(log A)
+Best Case: O(1)
